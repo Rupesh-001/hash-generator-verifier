@@ -1,16 +1,76 @@
-# React + Vite
+# 🔐 HashLab — Hash Generator & Verifier
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern cybersecurity utility for generating and verifying cryptographic hashes of text and files using **MD5, SHA-256, and SHA-512**.
 
-Currently, two official plugins are available:
+HashLab provides a simple web interface backed by a **FastAPI REST API**, making it useful for learning cryptographic hashing, file integrity verification, and practical cybersecurity concepts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔑 Generate cryptographic hashes from text
+- 📁 Generate hashes from uploaded files
+- 🔍 Verify text against an expected hash
+- 🛡️ Verify file integrity using hashes
+- ⚡ Supports MD5, SHA-256, and SHA-512
+- 📤 Drag-and-drop file upload
+- 📋 One-click hash copying
+- ⏳ Loading and error states
+- 📱 Responsive user interface
+- 🔒 Constant-time hash comparison using `hmac.compare_digest`
+- 🌐 REST API built with FastAPI
+- ⚛️ React-based frontend
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🧰 Tech Stack
+
+### Frontend
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+### Backend
+
+- Python
+- FastAPI
+- Uvicorn
+- `hashlib`
+- `hmac`
+
+### Deployment
+
+- Vercel
+
+---
+
+## 🏗️ Architecture
+
+```text
+┌──────────────────────────────┐
+│          React UI             │
+│                              │
+│  Text Hashing                │
+│  File Hashing                │
+│  Hash Verification           │
+└──────────────┬───────────────┘
+               │
+               │ HTTP REST API
+               ▼
+┌──────────────────────────────┐
+│        FastAPI Backend       │
+│                              │
+│  /api/hash/text              │
+│  /api/hash/file              │
+│  /api/verify/text            │
+│  /api/verify/file            │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Python hashlib         │
+│                              │
+│     MD5 / SHA-256 / SHA-512  │
+└──────────────────────────────┘
