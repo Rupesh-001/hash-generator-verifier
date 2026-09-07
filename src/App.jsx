@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const API_URL = "/api";
+const API_URL = "";
 
 function App() {
   const [operation, setOperation] = useState("generate");
